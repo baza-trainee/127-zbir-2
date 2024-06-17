@@ -1,0 +1,124 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/breakpoints";
+
+.header {
+  position: relative;
+  display: flex;
+  place-content: center;
+  height: 61px;
+  background: var(--bgc-header-main);
+
+  @media (min-width: 768px) {
+    height: 77px;
+    background: linear-gradient(
+      to right,
+      var(--bgc-header-gradient-from),
+      var(--bgc-header-gradient-to)
+    );
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 24px;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      padding: 0 64px;
+    }
+  }
+
+  &__logo {
+    width: 29px;
+    height: 35px;
+
+    @media (min-width: 768px) {
+      width: 37px;
+      height: 45px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 68px;
+
+    @include mq(menuBreakPoint) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      flex-direction: column;
+      transform: translateY(100%);
+      transform-origin: left;
+      transition: all 0.3s ease;
+      background-color: var(--bgc-menu);
+      border-radius: 0 0 16px 16px;
+      padding: 10px 12px 47px;
+      width: 214px;
+      height: 268px;
+      gap: 40px;
+    }
+
+    &_container {
+      display: flex;
+      align-items: center;
+      width: min-content;
+
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+
+    &_title {
+      font-size: 24px;
+
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
+  &__toggler {
+    display: flex;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    padding: 0;
+    background: transparent;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__link {
+    font-size: 20px;
+    line-height: 120%;
+    font-weight: 400;
+    text-align: center;
+    color: var(--fc-headline);
+    transition: color 0.3s ease;
+
+    @media screen and (min-width: 768px) {
+      color: var(--fc-header-mobile-menu);
+    }
+  }
+
+  &__link:hover {
+    color: var(--fc-header-menu-hover);
+  }
+
+  &__menuIcon_close {
+    width: 12px;
+    height: 12px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+}

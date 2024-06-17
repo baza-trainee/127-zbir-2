@@ -1,0 +1,14 @@
+@import "./fonts";
+
+:root {
+  --primary-font: "Strong";
+
+  // COLORS
+  // font-colors
+  --fc-headline: hsla(31, 75%, 14%, 1);
+  // background colors
+  --bgc-button-main: hsla(43, 100%, 64%, 1);
+  --bgc-button-second: transparent;
+  // border colors
+  --border-button: hsla(31, 75%, 14%, 1);
+}

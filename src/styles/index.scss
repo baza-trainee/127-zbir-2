@@ -1,0 +1,18 @@
+@import "./reset";
+@import "./fonts";
+@import "./variables";
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: var(--primary-font);
+  min-height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1440px;
+}

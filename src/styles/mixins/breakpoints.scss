@@ -1,0 +1,10 @@
+//Breakpoints
+$tablet: 768px; // ???
+
+@mixin mq($screen) {
+  @if $screen ==menuBreakPoint {
+    @media screen and (max-width: $tablet) {
+      @content;
+    }
+  }
+}

@@ -6,9 +6,15 @@
   // COLORS
   // font-colors
   --fc-headline: hsla(31, 75%, 14%, 1);
+  --fc-header-mobile-menu: rgb(32, 32, 29);
+  --fc-header-menu-hover: rgba(235, 235, 235, 1);
   // background colors
   --bgc-button-main: hsla(43, 100%, 64%, 1);
   --bgc-button-second: transparent;
+  --bgc-header-main: #79a9c4;
+  --bgc-header-gradient-from: rgb(160, 186, 201);
+  --bgc-header-gradient-to: rgb(102, 150, 183);
+  --bgc-menu: #fff;
   // border colors
   --border-button: hsla(31, 75%, 14%, 1);
 }

@@ -30,29 +30,3 @@
     max-width: 1090px;
   }
 }
-
-.slick-list {
-  height: 259px;
-  @media screen and (min-width: 7680px) {
-    height: 671px;
-  }
-}
-.slick-slider {
-  height: 282px;
-  @media screen and (min-width: 7680px) {
-    height: 727px;
-  }
-}
-.slick-dots {
-  bottom: 0;
-}
-.slick-dots li,
-.slick-dots li button {
-  width: 6px;
-  height: 6px;
-  padding: 0;
-}
-
-.slick-active button:before {
-  color: --bgc-button-main;
-}

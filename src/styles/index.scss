@@ -52,6 +52,7 @@ body {
 .slick-dots li button:before {
   color: var(--slider-dots);
   font-size: 6px;
+  opacity: 1;
   @media screen and (min-width: 768px) {
     font-size: 12px;
   }
@@ -65,18 +66,13 @@ body {
   background-color: var(--slider-dots-active);
   opacity: 1;
   content: "";
-  top: 5px;
-}
-
-.slick-dots li.slick-active button:hover:before,
-.slick-dots li.slick-active button:focus:before {
-  background-color: var(--bgc-button-main);
+  top: 6px;
 }
 
 @media screen and (min-width: 768px) {
   .slick-dots li.slick-active button:before {
     width: 24px;
     height: 12px;
-    // top: 24px;
+    top: 2px;
   }
 }

@@ -1,5 +1,8 @@
 @import "./fonts";
 
+//BREAKPOINTS
+$tablet: 768px;
+
 :root {
   --primary-font: "Strong";
 
@@ -8,6 +11,9 @@
   --fc-headline: hsla(31, 75%, 14%, 1);
   --fc-header-mobile-menu: rgb(32, 32, 29);
   --fc-header-menu-hover: rgba(235, 235, 235, 1);
+  --fc-header-menu-hover-from: rgba(246, 196, 123, 1);
+  --fc-header-menu-hover-to: rgba(210, 125, 24, 1);
+  // 246 196 123 to 210 125 24
   // background colors
   --bgc-button-main: hsla(43, 100%, 64%, 1);
   --bgc-button-second: transparent;

@@ -52,7 +52,7 @@ const Header: React.FC = () => {
         transform: "scaleX(0) translateY(100%)",
     };
   
-  const listStyle = width <= 768 ? listStyleMobile : {};
+  const listStyle = width < 768 ? listStyleMobile : {};
 
   return (
     <header className={S.header}>

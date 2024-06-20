@@ -8,7 +8,7 @@
   height: 61px;
   background: var(--bgc-header-main);
 
-  @media (min-width: 768px) {
+  @include on-tablet {
     height: 77px;
     background: linear-gradient(
       to right,
@@ -25,7 +25,7 @@
     width: 100%;
     padding: 0 24px;
 
-    @media screen and (min-width: 768px) {
+    @include on-tablet {
       flex-direction: row;
       padding: 0 64px;
     }
@@ -35,7 +35,7 @@
     width: 29px;
     height: 35px;
 
-    @media (min-width: 768px) {
+    @include on-tablet {
       width: 37px;
       height: 45px;
     }
@@ -43,23 +43,30 @@
 
   &__list {
     display: flex;
-    gap: 68px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 
-    @include mq(menuBreakPoint) {
-      position: absolute;
-      bottom: 0;
-      left: 0;
+    flex-direction: column;
+    transform: translateY(100%);
+    transform-origin: left;
+    transition: all 0.3s ease;
+    background-color: var(--bgc-menu);
+    border-radius: 0 0 16px 16px;
+    padding: 10px 12px 47px;
+    width: 214px;
+    height: 268px;
+    gap: 40px;
 
-      flex-direction: column;
-      transform: translateY(100%);
-      transform-origin: left;
-      transition: all 0.3s ease;
-      background-color: var(--bgc-menu);
-      border-radius: 0 0 16px 16px;
-      padding: 10px 12px 47px;
-      width: 214px;
-      height: 268px;
-      gap: 40px;
+    @include on-tablet {
+      transform: none;
+      position: relative;
+      flex-direction: row;
+      gap: 68px;
+      background-color: transparent;
+      padding: 0;
+      width: auto;
+      height: auto;
     }
 
     &_container {
@@ -67,7 +74,7 @@
       align-items: center;
       width: min-content;
 
-      @media screen and (min-width: 768px) {
+      @include on-tablet {
         display: none;
       }
     }
@@ -75,7 +82,7 @@
     &_title {
       font-size: 24px;
 
-      @media screen and (min-width: 768px) {
+      @include on-tablet {
         display: none;
       }
     }
@@ -90,7 +97,7 @@
     padding: 0;
     background: transparent;
 
-    @media screen and (min-width: 768px) {
+    @include on-tablet {
       display: none;
     }
   }
@@ -100,16 +107,28 @@
     line-height: 120%;
     font-weight: 400;
     text-align: center;
-    color: var(--fc-headline);
-    transition: color 0.3s ease;
+    color: var(--fc-header-mobile-menu);
+    transition: all 0.3s ease;
 
-    @media screen and (min-width: 768px) {
-      color: var(--fc-header-mobile-menu);
+    @include on-tablet {
+      color: var(--fc-headline);
     }
   }
 
   &__link:hover {
-    color: var(--fc-header-menu-hover);
+    background: linear-gradient(
+      to right,
+      var(--fc-header-menu-hover-from),
+      var(--fc-header-menu-hover-to)
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include on-tablet {
+      background: none;
+      color: var(--fc-header-menu-hover);
+      -webkit-text-fill-color: unset;
+    }
   }
 
   &__menuIcon_close {

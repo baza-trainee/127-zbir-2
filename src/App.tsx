@@ -8,14 +8,18 @@ import Target from "./components/Target/Target.tsx";
 function App() {
   return (
     <>
-      <Header />
-      <main>
+      <header className='container'>
+        <Header />
+      </header>
+      <main className='container'>
         <Hero />
         <Target />
         <About />
         <HowItWorks />
       </main>
-      <Footer />
+      <footer className='container'>
+        <Footer />
+      </footer>
     </>
   );
 }

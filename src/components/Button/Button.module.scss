@@ -1,15 +1,15 @@
 @use "../../styles/variables";
 
 .button {
+  position: relative;
   width: 100%;
   font-weight: 400;
   letter-spacing: -0.00688rem;
   text-align: center;
   border-radius: 16px;
-
   font-size: 16px;
   width: 280px;
-  padding: 14px 0px;
+  padding: 14px 20px;
   line-height: 19px;
 
   @media screen and (min-width: 375px) {
@@ -18,7 +18,7 @@
   @media screen and (min-width: 768px) {
     font-size: 20px;
     width: 310px;
-    padding: 18px 0px;
+    padding: 18px 20px;
     line-height: 24px;
   }
 
@@ -31,4 +31,40 @@
     background-color: var(--bgc-button-second);
     border: 1px solid var(--border-button);
   }
+
+  &:hover .iconWrapper {
+    visibility: visible;
+    transform: translateX(210px);
+  }
+  &:hover .textWrapper {
+    transform: translateX(-70px);
+  }
+  &:hover .iconShareWrapper {
+    transform: rotate(240deg);
+  }
+}
+
+.iconWrapper {
+  visibility: hidden;
+  position: absolute;
+  bottom: 18px;
+  // left: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.iconShareWrapper {
+  position: absolute;
+  bottom: 18px;
+  left: 250px;
+  // transition: transform 0.5s ease-in-out;
+  transition: transform;
+}
+
+.textWrapper {
+  transition: transform 0.5s ease-in-out;
+}
+
+.textShareWrapper {
+  display: flex;
+  justify-content: flex-start;
 }

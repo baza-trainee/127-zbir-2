@@ -34,11 +34,12 @@
 
   &:hover .iconWrapper {
     visibility: visible;
-    transform: translateX(210px);
+    transform: translateX(225px);
   }
   &:hover .textWrapper {
-    transform: translateX(-70px);
+    transform: translateX(-80px);
   }
+
   &:hover .iconShareWrapper {
     transform: rotate(240deg);
   }
@@ -48,20 +49,18 @@
   visibility: hidden;
   position: absolute;
   bottom: 18px;
-  // left: 10px;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .iconShareWrapper {
   position: absolute;
   bottom: 18px;
   left: 250px;
-  // transition: transform 0.5s ease-in-out;
-  transition: transform;
+  transition: transform 0.3s ease-in-out;
 }
 
 .textWrapper {
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .textShareWrapper {

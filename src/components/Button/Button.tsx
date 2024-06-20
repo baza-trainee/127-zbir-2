@@ -14,7 +14,6 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <button className={style} tabIndex={tabIndex}>
-      {/* <div className={styles.buttonContentWrapper}> */}
       <div
         className={
           variant === "support" ? styles.textWrapper : styles.textShareWrapper
@@ -29,7 +28,6 @@ const Button: React.FC<ButtonProps> = ({
       >
         <ButtonIcon variant={variant} />
       </div>
-      {/* </div> */}
     </button>
   );
 };

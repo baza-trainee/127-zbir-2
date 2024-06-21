@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import S from "./Header.module.scss";
 import logo from "../../assets/images/logo.png";
 import menu from "../../assets/icons/menu.svg";
@@ -13,7 +13,6 @@ const menuItems = [
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
 
   const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,30 +30,6 @@ const Header: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    const handleResize = (): void => {
-      setWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const listStyleMobile = isMenuOpen
-    ? {
-        opacity: 1,
-        transform: "scaleX(1) translateY(100%)",
-      }
-    : {
-        opacity: 0,
-        transform: "scaleX(0) translateY(100%)",
-      };
-
-  const listStyle = width <= 768 ? listStyleMobile : {};
-
   return (
     <header className={`${S.header} container`}>
       <nav className={S.header__nav}>
@@ -69,7 +44,7 @@ const Header: React.FC = () => {
           />
         </button>
 
-        <ul className={S.header__list} style={listStyle}>
+        <ul className={`${S.header__list} ${isMenuOpen ? S.open : ""}`}>
           <div className={S.header__list_container}>
             <button className={S.header__toggler}>
               <img

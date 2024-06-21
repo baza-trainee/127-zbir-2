@@ -5,7 +5,7 @@ import React from "react";
 
 const About: React.FC = () => {
   return (
-    <section className={styles.about}>
+    <section className={styles.about} id="about">
       <h2 className={styles.tittle}>Про бригаду</h2>
       <Carousel />
       <p className={styles.text}>

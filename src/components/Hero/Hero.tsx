@@ -5,10 +5,10 @@ import styles from "./Hero.module.scss";
 
 const Hero: FC = () => {
   return (
-    <section className={styles.heroWrapper}>
-      <div className="container">
+    <section className={`${styles.heroWrapper} container`}>
+      <div>
         <h1 className={styles.headline}>
-          Збір на дрони для 127-мої бригади ТРО ЗСУ{" "}
+          Збір на дрони для 127-мої бригади ТРО ЗСУ
         </h1>
         <div className={styles.buttonWrapper}>
           <Button variant="support" label="Підтримати" />

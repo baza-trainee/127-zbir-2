@@ -6,9 +6,6 @@
   padding-top: 80px;
   padding-bottom: 80px;
 
-  @media screen and (min-width: 768px) {
-    width: 650px;
-  }
   @media screen and (min-width: 1200px) {
     width: 100%;
     padding-top: 120px;
@@ -50,7 +47,7 @@
     font-size: 36px;
     text-align: center;
     @media screen and (min-width: 1200px) {
-      font-size: 40px;
+      font-size: 64px;
     }
     @media screen and (min-width: 1440px) {
       font-size: 64px;
@@ -91,9 +88,15 @@
 
   @media screen and (min-width: 1200px) {
     flex-direction: row;
-
     padding: 0px;
     font-size: 43px;
+  }
+
+  & p:first-of-type,
+  & p:last-of-type {
+    @media screen and (min-width: 1200px) {
+      font-size: 36px;
+    }
   }
 }
 

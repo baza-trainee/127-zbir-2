@@ -2,14 +2,12 @@
 
 .button {
   position: relative;
-  width: 100%;
-  font-weight: 400;
-  letter-spacing: -0.00688rem;
-  text-align: center;
-  border-radius: 16px;
-  font-size: 16px;
   width: 280px;
   padding: 14px 20px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 19px;
 
   @media screen and (min-width: 375px) {
@@ -34,10 +32,23 @@
 
   &:hover .iconWrapper {
     visibility: visible;
-    transform: translateX(225px);
+    transform: translateX(210px);
+    @media screen and (min-width: 375px) {
+      transform: translateX(260px);
+    }
+    @media screen and (min-width: 768px) {
+      transform: translateX(225px);
+    }
   }
+
   &:hover .textWrapper {
-    transform: translateX(-80px);
+    transform: translateX(-78px);
+    @media screen and (min-wdth: 375px) {
+      transform: translateX(-100px);
+    }
+    @media screen and (min-width: 768px) {
+      transform: translateX(-80px);
+    }
   }
 
   &:hover .iconShareWrapper {
@@ -48,15 +59,25 @@
 .iconWrapper {
   visibility: hidden;
   position: absolute;
-  bottom: 18px;
+  bottom: 15px;
   transition: transform 0.3s ease-in-out;
+  @media screen and (min-width: 768px) {
+    bottom: 18px;
+  }
 }
 
 .iconShareWrapper {
   position: absolute;
-  bottom: 18px;
-  left: 250px;
+  bottom: 15px;
+  left: 230px;
   transition: transform 0.3s ease-in-out;
+  @media screen and (min-width: 375px) {
+    left: 280px;
+  }
+  @media screen and (min-width: 768px) {
+    left: 250px;
+    bottom: 18px;
+  }
 }
 
 .textWrapper {

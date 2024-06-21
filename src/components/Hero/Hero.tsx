@@ -10,10 +10,10 @@ const Hero: FC = () => {
         <h1 className={styles.headline}>
           Збір на дрони для 127-мої бригади ТРО ЗСУ{" "}
         </h1>
-      </div>
-      <div className={styles.buttonWrapper}>
-        <Button variant="support" label="Підтримати" />
-        <Button variant="share" label="Поділитися" />
+        <div className={styles.buttonWrapper}>
+          <Button variant="support" label="Підтримати" />
+          <Button variant="share" label="Поділитися" />
+        </div>
       </div>
     </section>
   );

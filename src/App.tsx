@@ -15,7 +15,9 @@ function App() {
         <About />
         <HowItWorks />
       </main>
-      <Footer />
+      <footer className="container">
+        <Footer />
+      </footer>
     </>
   );
 }

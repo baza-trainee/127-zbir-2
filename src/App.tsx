@@ -8,16 +8,14 @@ import Target from "./components/Target/Target.tsx";
 function App() {
   return (
     <>
-      <header className='container'>
-        <Header />
-      </header>
-      <main className='container'>
+      <Header />
+      <main>
         <Hero />
         <Target />
         <About />
         <HowItWorks />
       </main>
-      <footer className='container'>
+      <footer className="container">
         <Footer />
       </footer>
     </>

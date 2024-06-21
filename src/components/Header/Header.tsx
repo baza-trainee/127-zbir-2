@@ -3,6 +3,7 @@ import S from "./Header.module.scss";
 import logo from "../../assets/images/logo.png";
 import menu from "../../assets/icons/menu.svg";
 import closeMenu from "../../assets/icons/menu-close.svg";
+import "../../styles/index.scss";
 
 const menuItems = [
   { name: "Мета", href: "#target", id: 1 },
@@ -29,9 +30,8 @@ const Header: React.FC = () => {
     }
   };
 
-
   return (
-    <header className={S.header}>
+    <header className={`${S.header} container`}>
       <nav className={S.header__nav}>
         <img className={S.header__logo} src={logo} alt="Logo" />
 
@@ -55,9 +55,7 @@ const Header: React.FC = () => {
               />
             </button>
 
-            <h3 className={S.header__list_title}>
-              Меню
-            </h3>
+            <h3 className={S.header__list_title}>Меню</h3>
           </div>
 
           {menuItems.map((item) => {

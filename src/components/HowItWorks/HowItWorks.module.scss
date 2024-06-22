@@ -1,15 +1,8 @@
-@use "../../styles/variables";
-
 .howItWorks {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 80px;
-  padding: 0 24px;
-
-  @media screen and (min-width: 768px) {
-    padding: 0px 64px;
-  }
+  margin-bottom: 40px;
 }
 
 .tittle {
@@ -35,6 +28,7 @@
   }
   @media screen and (min-width: 1200px) {
     align-items: start;
+    height: 336px;
   }
 }
 .text {
@@ -192,11 +186,19 @@
     height: 150px;
   }
 }
+
+.icons {
+  transition: transform 0.5s ease-in-out;
+}
+
 .firstGroupIcons .icons:first-of-type:hover,
-.firstGroupIcons .icons:first-of-type:focus,
+.firstGroupIcons .icons:first-of-type:focus {
+  transform: scale(1.3);
+}
+
 .firstGroupIcons .icons:last-of-type:hover,
 .firstGroupIcons .icons:last-of-type:focus {
-  transform: scale(1.3);
+  transform: scaleX(1.15);
 }
 
 .thirdGroupIcons .icons:nth-of-type(2):hover,

@@ -1,0 +1,142 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/breakpoints";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.modal__body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 343px;
+  height: 429px;
+  transform: translate(-50%, -50%);
+  background-color: rgba(246, 246, 246, 1);
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 24px;
+
+  @include on-tablet {
+    width: 642px;
+    height: 507px;
+    padding: 68px 0;
+  }
+}
+
+.modal__title {
+  font-family: Strong;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 120%;
+  width: 187px;
+  text-align: center;
+
+  @include on-tablet {
+    font-size: 36px;
+    width: auto;
+  }
+}
+
+.modal__toggler {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 0;
+  background: transparent;
+  width: 24px;
+  height: 24px;
+  right: 27px;
+
+  @include on-tablet {
+    top: 74px;
+    right: 38px;
+  }
+}
+
+.modal__description {
+  margin-top: 32px;
+  font-family: Strong;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+
+  @include on-tablet {
+    font-size: 24px;
+    margin-top: 24px;
+  }
+}
+
+.modal__container {
+  margin-top: 38px;
+  display: flex;
+  gap: 36px;
+}
+
+.modal__or {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin: 32px 0;
+
+  @include on-tablet {
+    margin: 46px 0;
+  }
+}
+
+.modal__or::before {
+  content: "";
+  height: 1px;
+  width: 110px;
+  background-color: rgba(122, 124, 127, 1);
+  float: left;
+  transform: translate(-19px, 11px);
+
+  @include on-tablet {
+    width: 150px;
+    transform: translate(-11px, 11px);
+  }
+}
+
+.modal__or::after {
+  content: "";
+  height: 1px;
+  width: 110px;
+  background-color: rgba(122, 124, 127, 1);
+  float: right;
+  transform: translate(19px, 11px);
+
+  @include on-tablet {
+    width: 150px;
+    transform: translate(11px, 11px);
+  }
+}
+
+.modal__icon {
+  display: flex;
+  width: 32px;
+  height: 32px;
+
+  @include on-tablet {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.modal__button {
+  max-width: 290px;
+}

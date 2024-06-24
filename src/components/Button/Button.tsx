@@ -6,14 +6,18 @@ const Button: React.FC<ButtonProps> = ({
   label,
   variant = "support",
   className = "",
-  tabIndex,
 }) => {
   const style = `${styles.button} ${
     variant && styles[`button_${variant}`]
   } ${className}`;
 
   return (
-    <button className={style} tabIndex={tabIndex}>
+    <a
+      className={style}
+      href="https://send.monobank.ua/jar/59VyL3wf5m"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div
         className={
           variant === "support" ? styles.textWrapper : styles.textShareWrapper
@@ -28,7 +32,7 @@ const Button: React.FC<ButtonProps> = ({
       >
         <ButtonIcon variant={variant} />
       </div>
-    </button>
+    </a>
   );
 };
 

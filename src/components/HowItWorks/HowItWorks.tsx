@@ -1,8 +1,8 @@
-import React from "react";
+import { FC } from "react";
 import Button from "../Button/Button";
 import styles from "./HowItWorks.module.scss";
 
-const HowItWorks: React.FC = () => {
+const HowItWorks: FC = () => {
   return (
     <section className={`${styles.howItWorks} container`} id="howitworks">
       <h2 className={styles.tittle}>Як це працює</h2>

@@ -1,7 +1,8 @@
 export default interface ButtonProps {
   label: string;
-  variant: "support" | "share";
+  variant: "support" | "share" | "copyLink";
   className?: string;
-  // onClick?: () => void;
+  onClick?: () => void;
   tabIndex?: number;
+  id?: string;
 }

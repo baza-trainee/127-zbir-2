@@ -59,13 +59,16 @@
     padding: 0px;
   }
   @media screen and (min-width: 1200px) {
-    flex-direction: row;
-    justify-content: flex-start;
-    row-gap: 0px;
-    column-gap: 24px;
+    align-items: center;
+    row-gap: 24px;
     order: 1;
     width: calc(50%);
+  }
+  @media screen and (min-width: 1400px) {
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: start;
+    column-gap: 24px;
   }
 }
 .wrapIcons {

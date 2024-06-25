@@ -1,7 +1,7 @@
-import React from "react";
+import { FC } from "react";
 import styles from "./Footer.module.scss";
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   return (
     <div className={styles.footer}>
       <p className={styles.footerText}>

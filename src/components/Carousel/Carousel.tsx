@@ -1,11 +1,11 @@
-import React from "react";
+import { FC } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./Carousel.module.scss";
 import { dataImg } from "../../assets/dataImg/dataImg";
 
-const Carousel: React.FC = () => {
+const Carousel: FC = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -25,8 +25,8 @@ const Carousel: React.FC = () => {
           <picture key={img.id} className={styles.wrapperImages}>
             <source
               srcSet={`${img.src2x} 2x`}
-              media='(min-resolution: 2dppx)'
-              type='image/jpg'
+              media="(min-resolution: 2dppx)"
+              type="image/jpg"
             />
             <img className={styles.images} src={img.src} alt={img.altText} />
           </picture>

@@ -32,6 +32,11 @@
     border: 1px solid var(--border-button);
   }
 
+  &_copyLink {
+    background-color: var(--bgc-button-main);
+    border: none;
+  }
+
   &:hover .iconWrapper {
     visibility: visible;
     transform: translateX(210px);
@@ -82,6 +87,10 @@
   }
 }
 
+.iconCopyLinkWrapper {
+  display: none;
+}
+
 .textWrapper {
   transition: transform 0.3s ease-in-out;
 }
@@ -89,4 +98,9 @@
 .textShareWrapper {
   display: flex;
   justify-content: flex-start;
+}
+
+.textCopyLinkWrapper {
+  display: flex;
+  justify-content: center;
 }

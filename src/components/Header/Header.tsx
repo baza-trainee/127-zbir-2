@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { FC } from "react";
 import S from "./Header.module.scss";
 import logo from "../../assets/images/logo.png";
 import menu from "../../assets/icons/menu.svg";
 import closeMenu from "../../assets/icons/menu-close.svg";
 import "../../styles/index.scss";
+import { useAppContext } from "../../hooks/useAppContext";
 
 const menuItems = [
   { name: "Мета", href: "#target", id: 1 },
@@ -11,12 +12,8 @@ const menuItems = [
   { name: "Як це працює", href: "#howitworks", id: 3 },
 ];
 
-const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = (): void => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+const Header: FC = () => {
+  const { toggleMenu, setIsMenuOpen, isMenuOpen } = useAppContext();
 
   const handleMenuItemClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,

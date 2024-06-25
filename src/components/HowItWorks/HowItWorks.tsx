@@ -4,7 +4,7 @@ import styles from "./HowItWorks.module.scss";
 
 const HowItWorks: React.FC = () => {
   return (
-    <section className={`${styles.howItWorks} container`}>
+    <section className={`${styles.howItWorks} container`} id="howitworks">
       <h2 className={styles.tittle}>Як це працює</h2>
       <div className={styles.wrap}>
         {/* <div className={styles.wrapTabl}> */}

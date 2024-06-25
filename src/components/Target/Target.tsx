@@ -11,7 +11,7 @@ const Target: FC = () => {
   // }, []);
 
   return (
-    <section className={`container ${styles.sectionWrapper}`}>
+    <section className={`container ${styles.sectionWrapper}`} id="target">
       <h2 className={styles.headline}>Мета збору</h2>
       <div className={styles.infoWrapper}>
         <img src="icons/big-dron.svg" alt="dron" />

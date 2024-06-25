@@ -1,3 +1,3 @@
 export default interface ButtonIconProps {
-  variant: "support" | "share";
+  variant: "support" | "share" | "copyLink";
 }

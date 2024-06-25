@@ -36,7 +36,7 @@
       padding: 68px 0;
     }
   }
-  
+
   &__title {
     width: 187px;
     text-align: center;
@@ -44,13 +44,13 @@
     font-size: 24px;
     font-weight: 400;
     line-height: 120%;
-  
+
     @include on-tablet {
       font-size: 36px;
       width: auto;
     }
   }
-  
+
   &__toggler {
     position: absolute;
     right: 27px;
@@ -62,45 +62,46 @@
     align-items: center;
     border: none;
     background: transparent;
-  
+
     @include on-tablet {
       top: 74px;
       right: 38px;
     }
   }
-  
+
   &__description {
     margin-top: 32px;
     text-align: center;
     font-family: Strong;
     font-size: 16px;
     font-weight: 400;
-  
+
     @include on-tablet {
       margin-top: 24px;
       font-size: 24px;
     }
   }
-  
+
   &__container {
     display: flex;
     margin-top: 38px;
     gap: 36px;
   }
-  
+
   &__or {
     margin: 32px 0;
     text-align: center;
     font-family: Roboto;
     font-size: 20px;
     font-weight: 400;
-  
+
     @include on-tablet {
       margin: 46px 0;
     }
   }
 
-  &__or::before, &__or::after {
+  &__or::before,
+  &__or::after {
     content: "";
     width: 110px;
     height: 1px;
@@ -110,37 +111,37 @@
       width: 150px;
     }
   }
-  
+
   &__or::before {
     float: left;
     transform: translate(-19px, 11px);
-  
+
     @include on-tablet {
       transform: translate(-11px, 11px);
     }
   }
-  
+
   &__or::after {
     float: right;
     transform: translate(19px, 11px);
-  
+
     @include on-tablet {
       transform: translate(11px, 11px);
     }
   }
-  
+
   &__icon {
     display: flex;
     width: 32px;
     height: 32px;
-  
+
     @include on-tablet {
       width: 40px;
       height: 40px;
     }
   }
-  
-  &__button {
-    max-width: 290px;
-  }
+
+  // &__button {
+  //   max-width: 290px;
+  // }
 }

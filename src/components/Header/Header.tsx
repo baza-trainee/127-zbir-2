@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import S from "./Header.module.scss";
 import logo from "../../assets/images/logo.png";
 import menu from "../../assets/icons/menu.svg";
@@ -12,7 +12,7 @@ const menuItems = [
   { name: "Як це працює", href: "#howitworks", id: 3 },
 ];
 
-const Header: React.FC = () => {
+const Header: FC = () => {
   const { toggleMenu, setIsMenuOpen, isMenuOpen } = useAppContext();
 
   const handleMenuItemClick = (

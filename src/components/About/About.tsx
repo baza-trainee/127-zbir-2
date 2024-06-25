@@ -1,10 +1,9 @@
+import { FC } from "react";
 import Carousel from "../Carousel/Carousel.tsx";
-import "../../styles/index.scss";
 import styles from "./About.module.scss";
+import "../../styles/index.scss";
 
-import React from "react";
-
-const About: React.FC = () => {
+const About: FC = () => {
   return (
     <section className={`${styles.about} container`} id="about">
       <h2 className={styles.tittle}>Про бригаду</h2>

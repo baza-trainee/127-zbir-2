@@ -1,3 +1,4 @@
+import { FC } from "react";
 import About from "./components/About/About.tsx";
 import Footer from "./components/Footer/Footer.tsx";
 import Header from "./components/Header/Header.tsx";
@@ -7,7 +8,7 @@ import Modal from "./components/Modal/Modal.tsx";
 import Target from "./components/Target/Target.tsx";
 import { AppContextProvider } from "./context/AppContext.tsx";
 
-function App() {
+const App: FC = () => {
   return (
     <AppContextProvider>
       <Modal />
@@ -21,8 +22,8 @@ function App() {
       <footer className="container">
         <Footer />
       </footer>
-    </ AppContextProvider>
+    </AppContextProvider>
   );
-}
+};
 
 export default App;

@@ -4,4 +4,5 @@ export default interface ButtonProps {
   className?: string;
   onClick?: () => void;
   tabIndex?: number;
+  id?: string;
 }

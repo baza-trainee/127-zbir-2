@@ -1,10 +1,11 @@
+import { FC } from "react";
 import { useAppContext } from "../../hooks/useAppContext";
-import S from "./Modal.module.scss";
+import Button from "../Button/Button";
 import closeMenu from "../../assets/icons/menu-close.svg";
 import LinkedInLogo from "../../assets/icons/modal/devicon_linkedin.svg";
 import TelegramLogo from "../../assets/icons/modal/logos_telegram.svg";
 import FacebookLogo from "../../assets/icons/modal/logos_facebook.svg";
-import Button from "../Button/Button";
+import S from "./Modal.module.scss";
 
 import {
   FacebookShareButton,
@@ -12,7 +13,7 @@ import {
   TelegramShareButton,
 } from "react-share";
 
-const Modal: React.FC = () => {
+const Modal: FC = () => {
   const { isModalOpen, handleModal } = useAppContext();
 
   if (isModalOpen) {
@@ -24,14 +25,12 @@ const Modal: React.FC = () => {
   const button = document.getElementById("button");
 
   if (button) {
-    button.addEventListener("click", () =>
-      writeClipboardText()
-    );
+    button.addEventListener("click", () => writeClipboardText());
   }
 
   async function writeClipboardText() {
     try {
-      await navigator.clipboard.writeText('#');
+      await navigator.clipboard.writeText("#");
     } catch (error) {
       console.error(error);
     }
@@ -79,13 +78,19 @@ const Modal: React.FC = () => {
 
             <p className={S.modal__or}>Або</p>
 
-            <div id="button" onClick={writeClipboardText}>
-              <Button
+            {/* <div id="button" onClick={writeClipboardText}> */}
+            {/* <Button
                 variant="copyLink"
                 label="Скопіювати посилання"
                 className={S.modal__button}
-              />
-            </div>
+              /> */}
+            <Button
+              variant="copyLink"
+              label="Скопіювати посилання"
+              onClick={writeClipboardText}
+              id="button"
+            />
+            {/* </div> */}
           </div>
         </div>
       )}

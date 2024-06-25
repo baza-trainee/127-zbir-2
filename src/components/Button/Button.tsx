@@ -1,38 +1,56 @@
+import { FC } from "react";
 import ButtonIcon from "./ButtonIcon/ButtonIcon";
 import ButtonProps from "../../types/buttonType";
 import styles from "./Button.module.scss";
 import { useAppContext } from "../../hooks/useAppContext";
 
-const Button: React.FC<ButtonProps> = ({
+const Button: FC<ButtonProps> = ({
   label,
   variant = "support",
   className = "",
-  tabIndex,
 }) => {
   const { handleModal } = useAppContext();
   const style = `${styles.button} ${
     variant && styles[`button_${variant}`]
-    } ${className}`;
+  } ${className}`;
+
+  const link =
+    variant === "support"
+      ? "https://send.monobank.ua/jar/59VyL3wf5m"
+      : undefined;
 
   return (
-    <button className={style} tabIndex={tabIndex} onClick={variant === "share" ? handleModal : () => {}}>
+    <a
+      className={style}
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={variant === "share" ? handleModal : () => {}}
+    >
+      {/* <button className={style} tabIndex={tabIndex} onClick={variant === "share" ? handleModal : () => {}}> */}
       <div
         className={
-          variant === "support" ? styles.textWrapper : variant === "share" ? styles.textShareWrapper : styles.textCopyLinkWrapper
+          variant === "support"
+            ? styles.textWrapper
+            : variant === "share"
+            ? styles.textShareWrapper
+            : styles.textCopyLinkWrapper
         }
       >
         {label}
       </div>
       <div
         className={
-          variant === "support" ? styles.iconWrapper : variant === 'share' ? styles.iconShareWrapper : styles.iconCopyLinkWrapper
+          variant === "support"
+            ? styles.iconWrapper
+            : variant === "share"
+            ? styles.iconShareWrapper
+            : styles.iconCopyLinkWrapper
         }
       >
-        {variant !== "copyLink" && (
-          <ButtonIcon variant={variant} />
-        )}
+        {variant !== "copyLink" && <ButtonIcon variant={variant} />}
       </div>
-    </button>
+    </a>
   );
 };
 

@@ -1,8 +1,8 @@
-import React from "react";
+import { FC } from "react";
 import Button from "../Button/Button";
 import styles from "./HowItWorks.module.scss";
 
-const HowItWorks: React.FC = () => {
+const HowItWorks: FC = () => {
   return (
     <section className={`${styles.howItWorks} container`} id="howitworks">
       <h2 className={styles.tittle}>Як це працює</h2>
@@ -16,28 +16,28 @@ const HowItWorks: React.FC = () => {
         <div className={styles.wrapIcons}>
           <div className={styles.firstGroupIcons}>
             <svg className={styles.icons} width={43} height={53}>
-              <use href='/iconsGroup.svg#icon-cup'></use>
+              <use href="/iconsGroup.svg#icon-cup"></use>
             </svg>
             <svg className={styles.icons} width={88} height={57}>
-              <use href='/iconsGroup.svg#icon-people'></use>
+              <use href="/iconsGroup.svg#icon-people"></use>
             </svg>
           </div>
           <div className={styles.thirdGroupIcons}>
             <svg className={styles.icons} width={45} height={30}>
-              <use href='/iconsGroup.svg#icon-arrow-desk'></use>
+              <use href="/iconsGroup.svg#icon-arrow-desk"></use>
             </svg>
             <svg className={styles.icons} width={83} height={31}>
-              <use href='/iconsGroup.svg#icon-drone'></use>
+              <use href="/iconsGroup.svg#icon-drone"></use>
             </svg>
 
             <svg className={styles.icons} width={45} height={30}>
-              <use href='/iconsGroup.svg#icon-arrow1'></use>
+              <use href="/iconsGroup.svg#icon-arrow1"></use>
             </svg>
           </div>
         </div>
         <div className={styles.buttonWrapper}>
-          <Button variant='support' label='Підтримати' />
-          <Button variant='share' label='Поділитися' />
+          <Button variant="support" label="Підтримати" />
+          <Button variant="share" label="Поділитися" />
         </div>
         <p className={styles.text}>
           Ваш донат - це не просто фінансова підтримка, це реальна допомога у

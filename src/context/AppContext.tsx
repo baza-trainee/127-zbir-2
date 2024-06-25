@@ -8,9 +8,11 @@ type Props = {
 };
 
 export const AppContextProvider: React.FC<Props> = ({ children }) => {
-  const WEBSITE_URL = 'https://testing-1ceda.web.app/';
+  const WEBSITE_URL = window.location.href;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCopied, setIsCopied] = useState<boolean>(false);
+
 
   const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen);
@@ -25,6 +27,12 @@ export const AppContextProvider: React.FC<Props> = ({ children }) => {
       await navigator.clipboard.writeText(WEBSITE_URL);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsCopied(true);
+
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 5000);
     }
   }
 
@@ -41,10 +49,12 @@ export const AppContextProvider: React.FC<Props> = ({ children }) => {
     handleModal,
     setIsMenuOpen,
     WEBSITE_URL,
-    writeClipboardText
+    writeClipboardText,
+    setIsModalOpen,
+    isCopied
   };
 
   return (
     <AppContext.Provider value={contextValue}>{children}</AppContext.Provider>
   );
-}
+};

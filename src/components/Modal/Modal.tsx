@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useAppContext } from "../../hooks/useAppContext";
 import Button from "../Button/Button";
 import closeMenu from "../../assets/icons/menu-close.svg";
@@ -14,7 +14,14 @@ import {
 } from "react-share";
 
 const Modal: FC = () => {
-  const { isModalOpen, handleModal, WEBSITE_URL, writeClipboardText } = useAppContext();
+  const {
+    isModalOpen,
+    handleModal,
+    WEBSITE_URL,
+    writeClipboardText,
+    setIsModalOpen,
+    isCopied,
+  } = useAppContext();
 
   if (isModalOpen) {
     document.body.style.overflowY = "hidden";
@@ -22,14 +29,34 @@ const Modal: FC = () => {
     document.body.style.overflowY = "auto";
   }
 
+  const handleBackdropClick = (e: React.MouseEvent<HTMLElement>) => {
+    e.target === e.currentTarget ? setIsModalOpen(false) : null;
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      e.key === "Escape" ? setIsModalOpen(false) : null;
+    };
+
+    if (!isModalOpen) {
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  const copied = isCopied ? "Скопійовано" : "Скопіювати посилання";
+
   return (
     <>
       {isModalOpen && (
-        <div className={S.modal}>
+        <div className={S.modal} onClick={handleBackdropClick}>
           <div className={S.modal__body}>
-            <h2 className={S.modal__title}>
-              Поділіться сайтом з друзями!
-            </h2>
+            <h2 className={S.modal__title}>Поділіться сайтом з друзями!</h2>
 
             <button className={S.modal__toggler}>
               <img
@@ -74,7 +101,7 @@ const Modal: FC = () => {
 
             <Button
               variant="copyLink"
-              label="Скопіювати посилання"
+              label={copied}
               onClick={writeClipboardText}
               id="button"
             />

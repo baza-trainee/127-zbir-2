@@ -5,5 +5,7 @@ export type AppContextType = {
   handleModal: () => void,
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>,
   WEBSITE_URL: string,
-  writeClipboardText: () => void
+  writeClipboardText: () => void,
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>,
+  isCopied: boolean
 };

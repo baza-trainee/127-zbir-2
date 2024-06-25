@@ -9,7 +9,7 @@ const Button: FC<ButtonProps> = ({
   variant = "support",
   className = "",
 }) => {
-  const { handleModal } = useAppContext();
+  const { handleModal, writeClipboardText } = useAppContext();
   const style = `${styles.button} ${
     variant && styles[`button_${variant}`]
   } ${className}`;
@@ -25,7 +25,7 @@ const Button: FC<ButtonProps> = ({
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={variant === "share" ? handleModal : () => {}}
+      onClick={variant === "share" ? handleModal : variant === 'copyLink' ? writeClipboardText : () => {}}
     >
       {/* <button className={style} tabIndex={tabIndex} onClick={variant === "share" ? handleModal : () => {}}> */}
       <div

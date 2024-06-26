@@ -10,13 +10,12 @@ const Carousel: FC = () => {
     dots: true,
     infinite: true,
     slidesToShow: 1,
-    // autoplay: false,
-    autoplay: true,
+    autoplay: false,
+    // autoplay: true,
     autoplaySpeed: 2500,
     pauseOnHover: true,
     arrows: false,
     fade: true,
-    // dotsClass: "sliderDots",
   };
   return (
     <div className={styles.sliderContainer}>
@@ -25,8 +24,8 @@ const Carousel: FC = () => {
           <picture key={img.id} className={styles.wrapperImages}>
             <source
               srcSet={`${img.src2x} 2x`}
-              media="(min-resolution: 2dppx)"
-              type="image/jpg"
+              media='(min-resolution: 2dppx)'
+              type='image/jpg'
             />
             <img className={styles.images} src={img.src} alt={img.altText} />
           </picture>

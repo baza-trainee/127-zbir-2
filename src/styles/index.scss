@@ -22,20 +22,23 @@ body {
 }
 
 .slick-list {
-  height: 259px;
-  @media screen and (min-width: 768px) {
-    height: 671px;
+  min-height: 220px;
+  @media screen and (min-width: 375px) {
+    min-height: 259px;
   }
 }
 .slick-slider {
-  height: 282px;
-  @media screen and (min-width: 768px) {
-    height: 727px;
+  min-height: 220px;
+  @media screen and (min-width: 375px) {
+    min-height: 259px;
   }
 }
 
 .slick-dots {
-  bottom: 3px;
+  bottom: -13px;
+  @media screen and (min-width: 768px) {
+    bottom: -40px;
+  }
 }
 .slick-dots li,
 .slick-dots li button {

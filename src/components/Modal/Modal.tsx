@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useAppContext } from "../../hooks/useAppContext";
 import Button from "../Button/Button";
 import closeMenu from "../../assets/icons/menu-close.svg";
@@ -14,7 +14,14 @@ import {
 } from "react-share";
 
 const Modal: FC = () => {
-  const { isModalOpen, handleModal } = useAppContext();
+  const {
+    isModalOpen,
+    handleModal,
+    WEBSITE_URL,
+    writeClipboardText,
+    setIsModalOpen,
+    isCopied,
+  } = useAppContext();
 
   if (isModalOpen) {
     document.body.style.overflowY = "hidden";
@@ -22,26 +29,35 @@ const Modal: FC = () => {
     document.body.style.overflowY = "auto";
   }
 
-  const button = document.getElementById("button");
+  const handleBackdropClick = (e: React.MouseEvent<HTMLElement>) => {
+    e.target === e.currentTarget ? setIsModalOpen(false) : null;
+  };
 
-  if (button) {
-    button.addEventListener("click", () => writeClipboardText());
-  }
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      e.key === "Escape" ? setIsModalOpen(false) : null;
+    };
 
-  async function writeClipboardText() {
-    try {
-      await navigator.clipboard.writeText("#");
-    } catch (error) {
-      console.error(error);
+    if (!isModalOpen) {
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", handleKeyDown);
     }
-  }
+
+    return () => {
+      document.body.style.overflow = "auto";
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  const copied = isCopied ? "Скопійовано" : "Скопіювати посилання";
 
   return (
     <>
       {isModalOpen && (
-        <div className={S.modal}>
+        <div className={S.modal} onClick={handleBackdropClick}>
           <div className={S.modal__body}>
             <h2 className={S.modal__title}>Поділіться сайтом з друзями!</h2>
+
             <button className={S.modal__toggler}>
               <img
                 src={closeMenu}
@@ -50,12 +66,13 @@ const Modal: FC = () => {
                 className={S.modal__menuIcon_close}
               />
             </button>
+
             <p className={S.modal__description}>
               Надішліть посилання на сайт через соціальні мережі
             </p>
 
             <div className={S.modal__container}>
-              <LinkedinShareButton url={"#"} className={S.modal__icon}>
+              <LinkedinShareButton url={WEBSITE_URL} className={S.modal__icon}>
                 <img
                   src={LinkedInLogo}
                   alt="LinkedIn"
@@ -63,7 +80,7 @@ const Modal: FC = () => {
                 />
               </LinkedinShareButton>
 
-              <TelegramShareButton url={"#"} className={S.modal__icon}>
+              <TelegramShareButton url={WEBSITE_URL} className={S.modal__icon}>
                 <img
                   src={TelegramLogo}
                   alt="Telegram"
@@ -71,26 +88,23 @@ const Modal: FC = () => {
                 />
               </TelegramShareButton>
 
-              <FacebookShareButton url={"#"} className={S.modal__icon}>
-                <img src={FacebookLogo} alt="Facebook" />
+              <FacebookShareButton url={WEBSITE_URL} className={S.modal__icon}>
+                <img
+                  src={FacebookLogo}
+                  alt="Facebook"
+                  className={S.modal__icon}
+                />
               </FacebookShareButton>
             </div>
 
             <p className={S.modal__or}>Або</p>
 
-            {/* <div id="button" onClick={writeClipboardText}> */}
-            {/* <Button
-                variant="copyLink"
-                label="Скопіювати посилання"
-                className={S.modal__button}
-              /> */}
             <Button
               variant="copyLink"
-              label="Скопіювати посилання"
+              label={copied}
               onClick={writeClipboardText}
               id="button"
             />
-            {/* </div> */}
           </div>
         </div>
       )}

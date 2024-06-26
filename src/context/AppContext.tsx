@@ -8,8 +8,11 @@ type Props = {
 };
 
 export const AppContextProvider: React.FC<Props> = ({ children }) => {
+  const WEBSITE_URL = window.location.href;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCopied, setIsCopied] = useState<boolean>(false);
+
 
   const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen);
@@ -19,15 +22,39 @@ export const AppContextProvider: React.FC<Props> = ({ children }) => {
     setIsModalOpen(!isModalOpen);
   };
 
+  async function writeClipboardText() {
+    try {
+      await navigator.clipboard.writeText(WEBSITE_URL);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsCopied(true);
+
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 5000);
+    }
+  }
+
+  const button = document.getElementById("button");
+
+  if (button) {
+    button.addEventListener("click", () => writeClipboardText());
+  }
+
   const contextValue = {
     isMenuOpen,
     toggleMenu,
     isModalOpen,
     handleModal,
-    setIsMenuOpen
+    setIsMenuOpen,
+    WEBSITE_URL,
+    writeClipboardText,
+    setIsModalOpen,
+    isCopied
   };
 
   return (
     <AppContext.Provider value={contextValue}>{children}</AppContext.Provider>
   );
-}
+};

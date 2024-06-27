@@ -1,3 +1,5 @@
+import { Data } from "./DataType";
+
 export type AppContextType = {
   isMenuOpen: boolean,
   isModalOpen: boolean,
@@ -7,5 +9,6 @@ export type AppContextType = {
   WEBSITE_URL: string,
   writeClipboardText: () => void,
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>,
-  isCopied: boolean
+  isCopied: boolean,
+  data: Data | undefined,
 };

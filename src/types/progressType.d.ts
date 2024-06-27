@@ -1,3 +1,3 @@
 export default interface ProgressType {
-  balance: number;
+  balance: number | undefined;
 }

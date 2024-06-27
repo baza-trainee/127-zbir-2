@@ -39,12 +39,10 @@ const Modal: FC = () => {
     };
 
     if (!isModalOpen) {
-      document.body.style.overflow = "hidden";
       document.addEventListener("keydown", handleKeyDown);
     }
 
     return () => {
-      document.body.style.overflow = "auto";
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);

@@ -1,15 +1,11 @@
 import { FC } from "react";
-// import { FC, useState } from "react";
 import Progress from "./Progress/Progress";
-// import getBalance from "../../scripts/getBalance";
 import "../../styles/index.scss";
 import styles from "./Target.module.scss";
+import { useAppContext } from "../../hooks/useAppContext";
 
 const Target: FC = () => {
-  // const [balance, setBalance] = useState(0);
-  // useEffect(() => {
-  //   getBalance(setBalance);
-  // }, []);
+  const { data } = useAppContext();
 
   return (
     <section className={`container ${styles.sectionWrapper}`} id="target">
@@ -17,15 +13,14 @@ const Target: FC = () => {
       <div className={styles.infoWrapper}>
         <img src="icons/big-dron.svg" alt="dron" />
         <p>Наша мета забезпечити 127 бригаду на </p>
-        <p>48 000 грн</p>
+        {data && <p>{data.goal / 100} грн</p>}
       </div>
       <div className={styles.progressWrapper}>
         <div className={styles.info}>
-          <p>Зібрано:</p>
-          <p>з 48 000 грн</p>
+          {data && <p>Зібрано:{" "}{data.amount / 100}{" "}грн</p>}
+          {data && <p>з{" "}{data.goal / 100}{" "}грн</p>}
         </div>
-        {/* <Progress balance={balance} /> */}
-        <Progress balance={0} />
+        <Progress balance={data && data.amount / data.goal * 100} />
       </div>
     </section>
   );

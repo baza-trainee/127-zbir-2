@@ -26,8 +26,11 @@
 .headline {
   display: inline-block;
   font-size: 40px;
-  margin-top: 121px;
+  margin-top: 60px;
   color: var(--fc-headline);
+  @media screen and (min-width: 375px) {
+    margin-top: 105px;
+  }
   @media screen and (min-width: 768px) {
     font-size: 60px;
     width: 80%;

@@ -2,8 +2,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 40px;
-  margin-top: 80px;
+  padding-bottom: 80px;
+  padding-top: 80px;
+  @media screen and (min-width: 1200px) {
+    padding-bottom: 120px;
+    padding-top: 120px;
+  }
 }
 
 .tittle {
@@ -20,7 +24,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 80px;
   gap: 24px;
   width: 100%;
   position: relative;
@@ -29,6 +32,9 @@
   }
   @media screen and (min-width: 1200px) {
     align-items: start;
+    height: 406px;
+  }
+  @media screen and (min-width: 1440px) {
     height: 336px;
   }
 }

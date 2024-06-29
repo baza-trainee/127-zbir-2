@@ -2,8 +2,11 @@
 
 .footer {
   width: 100%;
-  padding: 40px 45px 28px;
+  padding: 0px 45px 28px;
   margin: 0 auto;
+  @media screen and (min-width: 1200px) {
+    padding-bottom: 20px;
+  }
 }
 .footerText {
   color: rgb(32, 32, 29);

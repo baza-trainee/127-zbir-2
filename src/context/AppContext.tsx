@@ -16,15 +16,15 @@ export const AppContextProvider: React.FC<Props> = ({ children }) => {
   const [data, setData] = useState<Data | undefined>();
 
   const getData = async () => {
-    fetch('https://api.monobank.ua/bank/jar/4SF3SCEV1t84mjZzEGtRMogxzhLZA4zS')
-      .then(res => {
-      return res.json()
+    fetch("https://api.monobank.ua/bank/jar/5Mrs5TJY4MvyThRVMMSj9kRsmtsupLpe")
+      .then((res) => {
+        return res.json();
       })
-    .then(json => setData(json))
-  }
+      .then((json) => setData(json));
+  };
 
   useEffect(() => {
-    getData()
+    getData();
   }, []);
 
   const toggleMenu = (): void => {
@@ -65,7 +65,7 @@ export const AppContextProvider: React.FC<Props> = ({ children }) => {
     writeClipboardText,
     setIsModalOpen,
     isCopied,
-    data
+    data,
   };
 
   return (

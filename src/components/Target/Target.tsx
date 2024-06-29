@@ -13,14 +13,19 @@ const Target: FC = () => {
       <div className={styles.infoWrapper}>
         <img src="icons/big-dron.svg" alt="dron" />
         <p>Наша мета забезпечити 127 бригаду на </p>
-        {data && <p>{data.goal / 100} грн</p>}
+        <p>50 000 грн</p>
       </div>
       <div className={styles.progressWrapper}>
         <div className={styles.info}>
-          {data && <p>Зібрано:{" "}{data.amount / 100}{" "}грн</p>}
-          {data && <p>з{" "}{data.goal / 100}{" "}грн</p>}
+          {data && (
+            <p>
+              Зібрано:{" "}
+              {isNaN(data.amount / 100) === true ? 0 : data.amount / 100} грн
+            </p>
+          )}
+          {data && <p>з 50 000 грн</p>}
         </div>
-        <Progress balance={data && data.amount / data.goal * 100} />
+        <Progress balance={data && (data.amount / data.goal) * 100} />
       </div>
     </section>
   );

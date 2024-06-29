@@ -16,7 +16,7 @@ const Button: FC<ButtonProps> = ({
 
   const link =
     variant === "support"
-      ? "https://send.monobank.ua/jar/59VyL3wf5m"
+      ? "https://send.monobank.ua/jar/5PxY1qu1j9"
       : undefined;
 
   return (
@@ -25,7 +25,13 @@ const Button: FC<ButtonProps> = ({
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={variant === "share" ? handleModal : variant === 'copyLink' ? writeClipboardText : () => {}}
+      onClick={
+        variant === "share"
+          ? handleModal
+          : variant === "copyLink"
+          ? writeClipboardText
+          : () => {}
+      }
     >
       {/* <button className={style} tabIndex={tabIndex} onClick={variant === "share" ? handleModal : () => {}}> */}
       <div

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import S from "./Header.module.scss";
 import logo from "../../assets/images/logo.png";
 import menu from "../../assets/icons/menu.svg";
@@ -27,8 +27,25 @@ const Header: FC = () => {
     }
   };
 
+  const [y, setY] = useState(window.scrollY);
+
+  const handleNavigation = useCallback((e: Event) => {
+    const window = e.currentTarget as Window;
+
+    setY(window?.scrollY);
+  }, []);
+
+  useEffect(() => {
+    setY(window.scrollY);
+    window.addEventListener("scroll", handleNavigation);
+
+    return () => {
+      window.removeEventListener("scroll", handleNavigation);
+    };
+  }, [handleNavigation]);
+
   return (
-    <header className={`${S.header} container`}>
+    <header className={`${S.header} container ${y > 0 ? S.translucent : ""}`}>
       <nav className={S.header__nav}>
         <img className={S.header__logo} src={logo} alt="Logo" />
 

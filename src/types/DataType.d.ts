@@ -8,5 +8,6 @@ export interface Data {
   jarId: string,
   ownerIcon: string,
   ownerame: string,
-  title: string
+  title: string,
+  errCode?: string
 }

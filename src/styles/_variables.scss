@@ -18,9 +18,13 @@ $tablet: 768px;
   // background colors
   --bgc-button-main: hsla(43, 100%, 64%, 1);
   --bgc-button-second: transparent;
-  --bgc-header-main: #79a9c4;
+  // --bgc-header-main: #79a9c4;
+  --bgc-header-main: rgba(121, 169, 196, 1);
+  --bgc-header-main-translucent: rgba(121, 169, 196, .5);
   --bgc-header-gradient-from: rgb(160, 186, 201);
+  --bgc-header-gradient-from-translucent: rgb(160, 186, 201, .5);
   --bgc-header-gradient-to: rgb(102, 150, 183);
+  --bgc-header-gradient-to-translucent: rgb(102, 150, 183, .5);
   --bgc-menu: #fff;
   // border colors
   --border-button: hsla(31, 75%, 14%, 1);
@@ -28,4 +32,6 @@ $tablet: 768px;
   --slider-dots: rgb(156, 163, 175);
   // slider-dots-active colors
   --slider-dots-active: rgb(32, 32, 29);
+  //transition props
+  --transition-props: all .3s ease;
 }

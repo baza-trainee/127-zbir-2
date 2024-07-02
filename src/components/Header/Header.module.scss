@@ -2,11 +2,17 @@
 @import "../../styles/mixins/breakpoints";
 
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 11;
+
   display: flex;
   place-content: center;
   height: 61px;
   background: var(--bgc-header-main);
+  transition: var(--transition-props);
 
   @include on-tablet {
     height: 77px;
@@ -110,7 +116,7 @@
     font-weight: 400;
     text-align: center;
     color: var(--fc-header-mobile-menu);
-    transition: all 0.3s ease;
+    transition: var(--transition-props);
 
     @include on-tablet {
       color: var(--fc-headline);
@@ -147,4 +153,17 @@
 .open {
   opacity: 1;
   transform: scaleX(1) translateY(100%);
+}
+
+.translucent {
+  background: var(--bgc-header-main-translucent);
+
+  @include on-tablet {
+    transition: var(--transition-props);
+    background: linear-gradient(
+      to right,
+      var(--bgc-header-gradient-from-translucent),
+      var(--bgc-header-gradient-to-translucent)
+    );
+  }
 }

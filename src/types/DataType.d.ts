@@ -9,5 +9,5 @@ export interface Data {
   ownerIcon: string,
   ownerame: string,
   title: string,
-  errCode: string
+  errCode?: string
 }

@@ -25,7 +25,7 @@ const Target: FC = () => {
           )}
           {data && <p>з 50 000 грн</p>}
         </div>
-        <Progress balance={data && (data.amount / data.goal) * 100} />
+        <Progress percents={data && !data.errCode ? (data.amount / data.goal) * 100 : 0} />
       </div>
     </section>
   );

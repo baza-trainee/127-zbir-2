@@ -28,6 +28,7 @@
   }
 
   &_share {
+    display: flex;
     background-color: var(--bgc-button-second);
     border: 1px solid var(--border-button);
   }
@@ -60,6 +61,10 @@
 
   &:hover .iconShareWrapper {
     transform: rotate(240deg);
+  }
+
+  &:hover .textShareWrapper {
+    flex: 1;
   }
 }
 
@@ -96,8 +101,8 @@
 }
 
 .textShareWrapper {
-  display: flex;
-  justify-content: flex-start;
+  flex: none;
+  transition: flex 0.3s ease;
 }
 
 .textCopyLinkWrapper {
